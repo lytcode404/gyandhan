@@ -1,15 +1,1862 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./style.css" rel="stylesheet">
-  <!-- npx tailwindcss -i ./input.css -o ./style.css --watch -->
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <h2>update push it yeyyy</h2>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style.css" rel="stylesheet" />
+    <!-- npx tailwindcss -i ./input.css -o ./style.css --watch -->
+  </head>
+  <body>
+    <!-- Header  -->
+    <div class="pb-2 sm:py-4 lg:pb-4" id="home">
+      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+        <header
+          class="flex justify-between items-center py-4 md:mb-12 md:py-3 xl:mb-16"
+        >
+          <a
+            class="inline-flex items-center text-black-800 font-bold gap-2.5 text-xl md:text-2xl"
+            href="#"
+          >
+            <span class="w-6 h-auto text-primary">
+              <div style="font-size: inherit; color: inherit; padding: 2px">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 640 512"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M640 199.9v54l-320 200L0 254v-54l320 200 320-200.1zm-194.5 72l47.1-29.4c-37.2-55.8-100.7-92.6-172.7-92.6-72 0-135.5 36.7-172.6 92.4h.3c2.5-2.3 5.1-4.5 7.7-6.7 89.7-74.4 219.4-58.1 290.2 36.3zm-220.1 18.8c16.9-11.9 36.5-18.7 57.4-18.7 34.4 0 65.2 18.4 86.4 47.6l45.4-28.4c-20.9-29.9-55.6-49.5-94.8-49.5-38.9 0-73.4 19.4-94.4 49zM103.6 161.1c131.8-104.3 318.2-76.4 417.5 62.1l.7 1 48.8-30.4C517.1 112.1 424.8 58.1 319.9 58.1c-103.5 0-196.6 53.5-250.5 135.6 9.9-10.5 22.7-23.5 34.2-32.6zm467 32.7z"
+                  ></path>
+                </svg>
+              </div>
+            </span>
+            <span>Gyandhan</span>
+          </a>
+          <nav class="hidden lg:flex gap-12">
+            <a
+              class="text-lg font-semibold text-primary lg:font-medium lg:text-base"
+              href="#"
+            >
+              Home
+            </a>
+            <a
+              class="hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100 lg:text-base lg:font-normal"
+              href="#loans"
+            >
+              Loans
+            </a>
+
+            <a
+              class="hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100 lg:text-base lg:font-normal"
+              href="#calcemi"
+            >
+              Calculate Emi </a
+            ><a
+              class="hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100 lg:text-base lg:font-normal"
+              href="#contactus"
+            >
+              Contact us
+            </a>
+          </nav>
+
+          <div x-data="{open: false}" class="relative">
+            <div
+              class="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium dark:text-white hover:bg-opacity-30 hidden"
+              x-on:click="open = !open"
+            >
+              <span class="w-fit">
+                <svg
+                  class="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </div>
+            <ul
+              class="absolute right-0 text-gray-900 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg z-20"
+              x-show="open"
+            >
+              <li
+                x-on:click="open = false"
+                class="group flex rounded-md items-center w-full px-2 py-2 text-sm cursor-pointer"
+              >
+                <a href="#home">Home</a>
+              </li>
+              <li
+                x-on:click="open = false"
+                class="group flex rounded-md items-center w-full px-2 py-2 text-sm cursor-pointer"
+              >
+                <a href="#loans">Loans</a>
+              </li>
+
+              <li
+                x-on:click="open = false"
+                class="group flex rounded-md items-center w-full px-2 py-2 text-sm cursor-pointer"
+              >
+                <a href="#calcemi">Calculate Emi</a>
+              </li>
+              <li
+                x-on:click="open = false"
+                class="group flex rounded-md items-center w-full px-2 py-2 text-sm cursor-pointer"
+              >
+                <a href="#contactus">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </header>
+      </div>
+    </div>
+
+    <!-- Loans -->
+    <div class="py-2" id="loans">
+      <div class="container mx-auto px-4">
+        <div class="md:w-5/6 md:mx-auto md:max-w-2xl">
+          <p class="text-center text-lg mt-2">
+            Get Smarter with GyanDhan - Your One-Stop Solution for Loans"
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 gap-3 p-4 mt-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:max-w-7xl xl:mx-auto"
+      >
+        <div>
+          <div class="relative">
+            <img
+              class="w-full rounded-global h-[500px] bg-gray-100 pt-5 xl:object-top xl:object-contain"
+              src="https://images.unsplash.com/photo-1637404230552-5ac6d76cb3a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            />
+            <div class="absolute right-3 left-3 bottom-3">
+              <span
+                class="bg-primary-500 text-white tracking-wide text-sm uppercase px-2 py-1 rounded-md"
+              >
+                Trending
+              </span>
+              <div
+                class="left-3 bottom-3 right-3 bg-white p-4 mt-3 rounded-global dark:bg-black"
+              >
+                <div class="flex items-center">
+                  <img
+                    class="w-10 h-10 rounded-full mr-3"
+                    src="https://picsum.photos/500/300"
+                  />
+                  <p class="uppercase text-sm">Perosnal loans</p>
+                </div>
+                <h1
+                  class="text-xl font-semibold text-black mb-4 mt-2 dark:text-white 2xl:text-2xl"
+                >
+                  unsecured loans that can be used for any purpose, such as debt
+                  consolidation, home renovations, or medical expenses
+                </h1>
+                <a class="flex items-center gap-x-1.5" href="#">
+                  Read more
+                  <span>
+                    <div
+                      style="font-size: inherit; color: inherit; padding: 2px"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 256 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="relative">
+            <img
+              class="w-full rounded-global h-[500px] bg-gray-100 pt-5 xl:object-top xl:object-contain"
+              src="https://images.unsplash.com/photo-1562774439-23ae4c68ad6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+            />
+            <div class="absolute right-3 left-3 bottom-3">
+              <span
+                class="bg-primary-500 text-white tracking-wide text-sm uppercase px-2 py-1 rounded-md"
+              >
+                Trending
+              </span>
+              <div
+                class="left-3 bottom-3 right-3 bg-white p-4 mt-3 rounded-global dark:bg-black"
+              >
+                <div class="flex items-center">
+                  <img
+                    class="w-10 h-10 rounded-full mr-3"
+                    src="https://picsum.photos/500/300"
+                  />
+                  <p class="uppercase text-sm">Education Loans</p>
+                </div>
+                <h1
+                  class="text-xl font-semibold text-black mb-4 mt-2 dark:text-white 2xl:text-2xl"
+                >
+                  used to pay for higher education expenses such as tuition,
+                  books, and room and board.
+                </h1>
+                <a class="flex items-center gap-x-1.5" href="#">
+                  Read more
+                  <span>
+                    <div
+                      style="font-size: inherit; color: inherit; padding: 2px"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 256 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="relative">
+            <img
+              class="w-full rounded-global h-[500px] bg-gray-100 pt-5 xl:object-top xl:object-contain"
+              src="https://images.unsplash.com/photo-1635399860495-2a2802a6df5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            />
+            <div class="absolute right-3 left-3 bottom-3">
+              <span
+                class="bg-primary-500 text-white tracking-wide text-sm uppercase px-2 py-1 rounded-md"
+              >
+                Trending
+              </span>
+              <div
+                class="left-3 bottom-3 right-3 bg-white p-4 mt-3 rounded-global dark:bg-black"
+              >
+                <div class="flex items-center">
+                  <img
+                    class="w-10 h-10 rounded-full mr-3"
+                    src="https://picsum.photos/500/300"
+                  />
+                  <p class="uppercase text-sm">Business loans</p>
+                </div>
+                <h1
+                  class="text-xl font-semibold text-black mb-4 mt-2 dark:text-white 2xl:text-2xl"
+                >
+                  used to start or expand a business. They can be secured or
+                  unsecured and can be used for a variety of business purposes.
+                </h1>
+                <a class="flex items-center gap-x-1.5" href="#">
+                  Read more
+                  <span>
+                    <div
+                      style="font-size: inherit; color: inherit; padding: 2px"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 256 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="relative">
+            <img
+              class="w-full rounded-global h-[500px] bg-gray-100 pt-5 xl:object-top xl:object-contain"
+              src="https://images.unsplash.com/photo-1602335422296-6c6346ee71f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            />
+            <div class="absolute right-3 left-3 bottom-3">
+              <span
+                class="bg-primary-500 text-white tracking-wide text-sm uppercase px-2 py-1 rounded-md"
+              >
+                Trending
+              </span>
+              <div
+                class="left-3 bottom-3 right-3 bg-white p-4 mt-3 rounded-global dark:bg-black"
+              >
+                <div class="flex items-center">
+                  <img
+                    class="w-10 h-10 rounded-full mr-3"
+                    src="https://picsum.photos/500/300"
+                  />
+                  <p class="uppercase text-sm">Car Loans</p>
+                </div>
+                <h1
+                  class="text-xl font-semibold text-black mb-4 mt-2 dark:text-white 2xl:text-2xl"
+                >
+                  used to purchase a vehicle. The loan is secured by the vehicle
+                  itself
+                </h1>
+                <a class="flex items-center gap-x-1.5" href="#">
+                  Read more
+                  <span>
+                    <div
+                      style="font-size: inherit; color: inherit; padding: 2px"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 256 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- content1 -->
+      <div class="py-10 text-center">
+        <div class="px-4 xl:max-w-7xl xl:mx-auto">
+          <h1
+            class="font-black tracking-normal text-3xl dark:text-slate-100 sm:text-4xl sm:text-slate-900"
+          >
+            Checkout Our Gallery
+          </h1>
+          <p class="mt-3 text-lg dark:text-gray-300 sm:max-w-lg sm:mx-auto">
+            enjoy your life, travel, education , business and many more. give it
+            a refresh , it will refresh you.
+          </p>
+          <div
+            class="grid grid-cols-2 gap-2 mt-7 sm:px-16 lg:grid-cols-8 lg:grid-rows-2 lg:gap-3"
+          >
+            <div class="col-span-2 lg:col-span-4 lg:row-span-2">
+              <img class="w-full bg-blue-50" src="https://picsum.photos/502" />
+            </div>
+            <div class="lg:col-span-2">
+              <img class="w-full bg-blue-50" src="https://picsum.photos/300" />
+            </div>
+            <div class="lg:col-span-2">
+              <img class="w-full bg-blue-50" src="https://picsum.photos/303" />
+            </div>
+            <div class="col-span-2 lg:block lg:col-span-4">
+              <img
+                class="w-full bg-blue-50"
+                src="https://picsum.photos/602/296"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content 2 -->
+      <div>
+        <div
+          class="max-w-7xl mx-auto py-12 px-4 dark:text-gray-100 text-gray-700"
+        >
+          <h2
+            class="font-extrabold text-center text-3xl tracking-tight text-slate-900 dark:text-slate-100 sm:px-3 sm:text-4xl md:max-w-xl md:mx-auto lg:px-5 2xl:max-w-4xl"
+          >
+            why you shoul choose us?
+          </h2>
+          <div
+            class="flex mt-5 flex-col lg:flex-row lg:max-w-6xl lg:mx-auto lg:mt-11 xl:items-center"
+          >
+            <img
+              class="rounded-md lg:w-7/12 lg:px-0 lg:mr-5 xl:h-min"
+              src="/assets/content2.svg"
+            />
+            <div
+              class="flex flex-col mt-10 gap-y-10 lg:mt-0 lg:w-5/12 xl:w-4/12"
+            >
+              <div>
+                <div class="flex items-center gap-x-4">
+                  <div>
+                    <p
+                      class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-2xl bg-primary text-black"
+                    >
+                      1.
+                    </p>
+                  </div>
+                  <h1
+                    class="font-extrabold text-xl text-slate-900 dark:text-slate-100"
+                  >
+                    Offer competitive rates and terms
+                  </h1>
+                </div>
+                <p class="mt-4">
+                  flexible repayment terms, and other features that makes our
+                  loans more attractive than those offered by other lenders.
+                </p>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4">
+                  <div>
+                    <p
+                      class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-2xl bg-primary text-black"
+                    >
+                      2.
+                    </p>
+                  </div>
+                  <h1
+                    class="font-extrabold text-xl text-slate-900 dark:text-slate-100"
+                  >
+                    Provide excellent customer service
+                  </h1>
+                </div>
+                <p class="mt-4">
+                  We are very responsive to your questions and concerns, and
+                  provide personalized services that will make you feel valued
+                  and respected.
+                </p>
+              </div>
+              <div>
+                <div class="flex items-center gap-x-4">
+                  <div>
+                    <p
+                      class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-2xl bg-primary text-black"
+                    >
+                      3.
+                    </p>
+                  </div>
+                  <h1
+                    class="font-extrabold text-xl text-slate-900 dark:text-slate-100"
+                  >
+                    Emphasize transparency and trustworthiness
+                  </h1>
+                </div>
+                <p class="mt-4">
+                  In a crowded market, borrowers wants to work with lenders they
+                  can trust. we are transparent about our lending practices,
+                  fees, and terms.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Features -->
+      <div class="bg-white py-6 sm:py-8 lg:py-12">
+        <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+          <div class="mb-10 md:mb-16">
+            <h2
+              class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6"
+            >
+              Our competitive advantage
+            </h2>
+            <p
+              class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto"
+            >
+              stands out by offering competitive interest rates, flexible loan
+              terms, personalized service, quick approval and funding, industry
+              expertise, and innovative lending solutions.
+            </p>
+          </div>
+          <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
+            <div class="flex bg-gray-50 border rounded-lg divide-x">
+              <div class="flex items-center text-indigo-500 p-2 md:p-4">
+                <span class="w-fit">
+                  <svg
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-semibold mb-2">
+                  interest rates
+                </h3>
+                <p class="text-gray-500">
+                  We offer competitive interest rates that are lower than other
+                  lenders.
+                </p>
+              </div>
+            </div>
+            <div class="flex bg-gray-50 border rounded-lg divide-x">
+              <div class="flex items-center text-indigo-500 p-2 md:p-4">
+                <span class="w-fit">
+                  <svg
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-semibold mb-2">
+                  Flexible loan terms
+                </h3>
+                <p class="text-gray-500">
+                  Our loans come with flexible terms and repayment options that
+                  can be customized to meet individual needs and budget.
+                </p>
+              </div>
+            </div>
+            <div class="flex bg-gray-50 border rounded-lg divide-x">
+              <div class="flex items-center text-indigo-500 p-2 md:p-4">
+                <span class="w-fit">
+                  <svg
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-semibold mb-2">
+                  Quick approval and funding
+                </h3>
+                <p class="text-gray-500">
+                  We prioritize quick approval and funding, so our customers can
+                  get the funds they need as soon as possible.
+                </p>
+              </div>
+            </div>
+            <div class="flex bg-gray-50 border rounded-lg divide-x">
+              <div class="flex items-center text-indigo-500 p-2 md:p-4">
+                <span class="w-fit">
+                  <svg
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-semibold mb-2">
+                  Personalized service
+                </h3>
+                <p class="text-gray-500">
+                  Our team provides personalized service and a human touch to
+                  build trust and loyalty with our borrowers.
+                </p>
+              </div>
+            </div>
+            <div class="flex bg-gray-50 border rounded-lg divide-x">
+              <div class="flex items-center text-indigo-500 p-2 md:p-4">
+                <span class="w-fit">
+                  <svg
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-semibold mb-2">
+                  Industry expertise
+                </h3>
+                <p class="text-gray-500">
+                  Our deep industry expertise ensures our customers receive the
+                  best possible service and advice.
+                </p>
+              </div>
+            </div>
+            <div class="flex bg-gray-50 border rounded-lg divide-x">
+              <div class="flex items-center text-indigo-500 p-2 md:p-4">
+                <span class="w-fit">
+                  <svg
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 md:w-8 h-6 md:h-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div class="p-4 md:p-6">
+                <h3 class="text-lg md:text-xl font-semibold mb-2">
+                  Innovative lending solutions
+                </h3>
+                <p class="text-gray-500">
+                  We embrace innovative lending solutions, such as online
+                  applications and alternative credit scoring methods, to
+                  provide a more seamless and convenient experience for our
+                  borrowers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- calculate emi -->
+    <div
+      id="calcemi"
+      class="py-8"
+      style="
+        background-color: bisque !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <form
+        onsubmit="calculateEMI(); return false;"
+        class="mb-3"
+        style="display: flex; flex-direction: column; align-items: center"
+      >
+        <label
+          for="loanAmount"
+          style="
+            margin: 10px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+          "
+          >Loan Amount:</label
+        >
+        <input
+          type="number"
+          id="loanAmount"
+          name="loanAmount"
+          required
+          style="
+            margin: 10px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+          "
+        />
+        <label
+          for="annualInterestRate"
+          style="
+            margin: 10px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+          "
+          >Annual Interest Rate:</label
+        >
+        <input
+          type="number"
+          id="annualInterestRate"
+          name="annualInterestRate"
+          step="0.01"
+          required
+          style="
+            margin: 10px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+          "
+        />
+        <label
+          for="tenure"
+          style="
+            margin: 10px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+          "
+          >Tenure (in months):</label
+        >
+        <input
+          type="number"
+          id="tenure"
+          name="tenure"
+          required
+          style="
+            margin: 10px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+          "
+        />
+        <input
+          type="submit"
+          value="Calculate"
+          style="
+            background-color: #4caf50;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          "
+        />
+      </form>
+      <div id="output" class="mt-3 mx-auto text-center"></div>
+    </div>
+
+    <!-- stats -->
+    <div id="stats" class="mt-4">
+      <div class="mx-auto px-4 max-w-7xl">
+        <div class="grid -mx-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="px-4">
+            <div class="py-6">
+              <h3 class="text-primary-500 text-4xl font-bold lg:mb-4">500+</h3>
+              <h5 class="text-black text-lg font-semibold dark:text-white">
+                Customers live
+              </h5>
+              <p class="text-sm">
+                orem ipsum dolor sit amet conse ctetur adipiscing elit
+              </p>
+            </div>
+          </div>
+          <div class="px-4">
+            <div class="py-6">
+              <h3 class="text-primary-500 text-4xl font-bold lg:mb-4">82%</h3>
+              <h5 class="text-black text-lg font-semibold dark:text-white">
+                Fully Customizable
+              </h5>
+              <p class="text-sm">people Loan approved</p>
+            </div>
+          </div>
+          <div class="px-4">
+            <div class="py-6">
+              <h3 class="text-primary-500 text-4xl font-bold lg:mb-4">24X7</h3>
+              <h5 class="text-black text-lg font-semibold dark:text-white">
+                Customer Support
+              </h5>
+              <p class="text-sm">our well qualified experts</p>
+            </div>
+          </div>
+          <div class="px-4">
+            <div class="py-6">
+              <h3 class="text-primary-500 text-4xl font-bold lg:mb-4">100%</h3>
+              <h5 class="text-black text-lg font-semibold dark:text-white">
+                Guarantee
+              </h5>
+              <p class="text-sm">You will receive your loan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial -->
+    <section id="testimonial">
+      <div class="max-w-7xl px-4 mt-16 mx-auto md:mt-24">
+        <div class="grid grid-cols-1 pb-8 text-center">
+          <h3 class="mb-6 md:text-3xl text-2xl leading-normal font-semibold">
+            What people are saying?
+          </h3>
+          <p class="text-slate-400 max-w-xl mx-auto">
+            Start working with Tailwind CSS that can provide everything you need
+            to generate awareness, drive traffic, connect.
+          </p>
+        </div>
+        <div
+          class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-8 gap-[30px]"
+        >
+          <ul class="space-y-8">
+            <li class="rounded-lg shadow-lg dark:shadow-gray-800 p-6">
+              <div
+                class="flex items-center pb-6 border-b border-gray-100 dark:border-gray-800"
+              >
+                <img
+                  class="h-16 w-16 rounded-full shadow dark:shadow-gray-800"
+                  src="https://shreethemes.in/techwind/layouts/assets/images/client/01.jpg"
+                />
+                <div class="pl-4">
+                  <a
+                    class="text-lg hover:text-indigo-600 duration-500 ease-in-out"
+                    href="#"
+                  >
+                    Barbara McIntosh
+                  </a>
+                  <p class="text-slate-400">C.E.O</p>
+                </div>
+              </div>
+              <div class="mt-6">
+                <p class="text-slate-400">
+                  I didn't know a thing about icon design until I read this
+                  book. Now I can create any icon I need in no time. Great
+                  resource!
+                </p>
+              </div>
+            </li>
+            <li class="rounded-lg shadow-lg dark:shadow-gray-800 p-6">
+              <div
+                class="flex items-center pb-6 border-b border-gray-100 dark:border-gray-800"
+              >
+                <img
+                  class="h-16 w-16 rounded-full shadow dark:shadow-gray-800"
+                  src="https://shreethemes.in/techwind/layouts/assets/images/client/05.jpg"
+                />
+                <div class="pl-4">
+                  <a
+                    class="text-lg hover:text-indigo-600 duration-500 ease-in-out"
+                    href="#"
+                  >
+                    Barbara McIntosh
+                  </a>
+                  <p class="text-slate-400">C.E.O</p>
+                </div>
+              </div>
+              <div class="mt-6">
+                <p class="text-slate-400">
+                  There are so many things I had to do with my old software that
+                  I just don't do at all with Techwind. Suspicious but I can't
+                  say I don't love it.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <ul class="space-y-8 hidden sm:block">
+            <li class="rounded-lg shadow-lg dark:shadow-gray-800 p-6">
+              <div
+                class="flex items-center pb-6 border-b border-gray-100 dark:border-gray-800"
+              >
+                <img
+                  class="h-16 w-16 rounded-full shadow dark:shadow-gray-800"
+                  src="https://shreethemes.in/techwind/layouts/assets/images/client/02.jpg"
+                />
+                <div class="pl-4">
+                  <a
+                    class="text-lg hover:text-indigo-600 duration-500 ease-in-out"
+                    href="#"
+                  >
+                    Barbara McIntosh
+                  </a>
+                  <p class="text-slate-400">C.E.O</p>
+                </div>
+              </div>
+              <div class="mt-6">
+                <p class="text-slate-400">
+                  The best part about Techwind is every time I pay my employees,
+                  my bank balance doesn't go down like it used to. Looking
+                  forward to spending this extra cash when I figure out why my
+                  card is being declined.
+                </p>
+              </div>
+            </li>
+            <li class="rounded-lg shadow-lg dark:shadow-gray-800 p-6">
+              <div
+                class="flex items-center pb-6 border-b border-gray-100 dark:border-gray-800"
+              >
+                <img
+                  class="h-16 w-16 rounded-full shadow dark:shadow-gray-800"
+                  src="https://shreethemes.in/techwind/layouts/assets/images/client/04.jpg"
+                />
+                <div class="pl-4">
+                  <a
+                    class="text-lg hover:text-indigo-600 duration-500 ease-in-out"
+                    href="#"
+                  >
+                    Barbara McIntosh
+                  </a>
+                  <p class="text-slate-400">C.E.O</p>
+                </div>
+              </div>
+              <div class="mt-6">
+                <p class="text-slate-400">
+                  I'm trying to get a hold of someone in support, I'm in a lot
+                  of trouble right now and they are saying it has something to
+                  do with my books. Please get back to me right away.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <ul class="space-y-8 hidden lg:block">
+            <li class="rounded-lg shadow-lg dark:shadow-gray-800 p-6">
+              <div
+                class="flex items-center pb-6 border-b border-gray-100 dark:border-gray-800"
+              >
+                <img
+                  class="h-16 w-16 rounded-full shadow dark:shadow-gray-800"
+                  src="https://shreethemes.in/techwind/layouts/assets/images/client/03.jpg"
+                />
+                <div class="pl-4">
+                  <a
+                    class="text-lg hover:text-indigo-600 duration-500 ease-in-out"
+                    href="#"
+                  >
+                    Barbara McIntosh
+                  </a>
+                  <p class="text-slate-400">C.E.O</p>
+                </div>
+              </div>
+              <div class="mt-6">
+                <p class="text-slate-400">
+                  I used to have to remit tax to the EU and with Techwind I
+                  somehow don't have to do that anymore. Nervous to travel there
+                  now though.
+                </p>
+              </div>
+            </li>
+            <li class="rounded-lg shadow-lg dark:shadow-gray-800 p-6">
+              <div
+                class="flex items-center pb-6 border-b border-gray-100 dark:border-gray-800"
+              >
+                <img
+                  class="h-16 w-16 rounded-full shadow dark:shadow-gray-800"
+                  src="https://shreethemes.in/techwind/layouts/assets/images/client/03.jpg"
+                />
+                <div class="pl-4">
+                  <a
+                    class="text-lg hover:text-indigo-600 duration-500 ease-in-out"
+                    href="#"
+                  >
+                    Barbara McIntosh
+                  </a>
+                  <p class="text-slate-400">C.E.O</p>
+                </div>
+              </div>
+              <div class="mt-6">
+                <p class="text-slate-400">
+                  This is the fourth email I've sent to your support team. I am
+                  literally being held in jail for tax fraud. Please answer your
+                  damn emails, this is important.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- faqs -->
+    <div
+      class="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:px-8 lg:py-14"
+      id="faqs"
+    >
+      <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+        <div
+          class="max-w-xl mb-10 text-center md:mx-auto md:mb-12 lg:max-w-2xl"
+        >
+          <h2
+            class="max-w-lg mb-6 font-sans font-bold leading-none tracking-tight text-slate-900 dark:text-slate-100 text-2xl md:mx-auto lg:text-3xl"
+          >
+            FAQ
+          </h2>
+          <p class="sm:text-lg">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque rem aperiam, eaque ipsa quae.
+          </p>
+        </div>
+        <div>
+          <div class="border-b dark:border-slate-700" x-data="{open: false}">
+            <button
+              class="flex text-lg font-medium py-4 flex-row text-left px-4 w-full items-center justify-between hover:bg-slate-100 dark:hover:bg-slate-900"
+              x-on:click="open = !open"
+            >
+              why i choose you over others?
+            </button>
+            <div class="px-4 mb-4 mt-2" x-show="open">
+              Competitive interest rates that are among the lowest in the
+              industry. Flexible repayment terms that are designed to fit your
+              budget and lifestyle.
+            </div>
+          </div>
+          <div class="border-b dark:border-slate-700" x-data="{open: false}">
+            <button
+              class="flex items-center justify-between text-lg font-medium px-4 py-4 text-left w-full hover:bg-slate-100 dark:hover:bg-slate-900"
+              x-on:click="open = !open"
+            >
+              is there any hidden charges?
+            </button>
+            <div class="px-4 text-base mb-4 mt-2" x-show="open">
+              With Gyan dhan, you'll never have to worry about hidden fees or
+              charges - we're committed to transparency and honesty in all of
+              our transactions.
+            </div>
+          </div>
+          <div class="border-b dark:border-slate-700" x-data="{open: false}">
+            <button
+              class="flex items-center justify-between text-lg font-medium px-4 py-4 text-left w-full hover:bg-slate-100 dark:hover:bg-slate-900"
+              x-on:click="open = !open"
+            >
+              Are they affordable?
+            </button>
+            <div class="px-4 text-base mb-4 mt-2" x-show="open">
+              At Gyan Dhan, we believe that everyone deserves access to
+              affordable loans
+            </div>
+          </div>
+          <div class="border-b dark:border-slate-700" x-data="{open: false}">
+            <button
+              class="flex items-center justify-between text-lg font-medium px-4 py-4 text-left w-full hover:bg-slate-100 dark:hover:bg-slate-900"
+              x-on:click="open = !open"
+            >
+              Are they Affordable?
+            </button>
+            <div class="px-4 text-base mb-4 mt-2" x-show="open">Yes. You c</div>
+          </div>
+          <div class="border-b dark:border-slate-700" x-data="{open: false}">
+            <button
+              class="flex items-center justify-between text-lg font-medium px-4 py-4 text-left w-full hover:bg-slate-100 dark:hover:bg-slate-900"
+              x-on:click="open = !open"
+            >
+              How can I reach for support?
+            </button>
+            <div class="px-4 text-base mb-4 mt-2" x-show="open">
+              Our loans are designed to be affordable for everyone, no matter
+              what your income level or credit score may be.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- team -->
+    <div
+      class="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-14"
+    >
+      <div class="md:w-5/6 md:mx-auto md:max-w-2xl">
+        <h1
+          class="text-slate-900 text-3xl text-center font-bold dark:text-white sm:text-4xl"
+        >
+          Our Team
+        </h1>
+        <p class="text-center text-lg mt-2">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout
+        </p>
+      </div>
+      <div
+        class="grid gap-10 mx-auto mt-8 sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg"
+      >
+        <div>
+          <div class="relative pb-56 mb-4 rounded-global shadow lg:pb-64">
+            <img
+              class="absolute object-cover w-full h-full rounded-global bg-blue-100 object-center"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFjZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+            />
+          </div>
+          <div class="flex flex-col sm:text-center">
+            <p class="text-lg font-bold text-slate-900 dark:text-slate-100">
+              Lowell Witting
+            </p>
+            <p class="mb-5 text-sm">Product Manager</p>
+            <div class="flex items-center space-x-3 sm:justify-center">
+              <a
+                class="transition-colors duration-300 hover:text-deep-purple-accent-400"
+                href="/"
+              >
+                <span class="w-fit">
+                  <svg
+                    class="h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-5"
+                  >
+                    <path
+                      d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+              <a
+                class="transition-colors duration-300 hover:text-deep-purple-accent-400"
+                href="/"
+              >
+                <span class="w-fit">
+                  <svg
+                    class="h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-5"
+                  >
+                    <path
+                      d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="relative pb-56 mb-4 rounded-global shadow lg:pb-64">
+            <img
+              class="absolute object-cover w-full h-full rounded-global bg-blue-100 object-center"
+              src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZmFjZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+            />
+          </div>
+          <div class="flex flex-col sm:text-center">
+            <p class="text-lg font-bold text-slate-900 dark:text-slate-100">
+              Dana Haley
+            </p>
+            <p class="mb-5 text-sm">Design Team Lead</p>
+            <div class="flex items-center space-x-3 sm:justify-center">
+              <a
+                class="transition-colors duration-300 hover:text-deep-purple-accent-400"
+                href="/"
+              >
+                <span class="w-fit">
+                  <svg
+                    class="h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-5"
+                  >
+                    <path
+                      d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+              <a
+                class="transition-colors duration-300 hover:text-deep-purple-accent-400"
+                href="/"
+              >
+                <span class="w-fit">
+                  <svg
+                    class="h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-5"
+                  >
+                    <path
+                      d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="relative pb-56 mb-4 rounded-global shadow lg:pb-64">
+            <img
+              class="absolute object-cover w-full h-full rounded-global bg-blue-100 object-center"
+              src="https://images.unsplash.com/photo-1573600073955-f15b3b6caab7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZmFjZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+            />
+          </div>
+          <div class="flex flex-col sm:text-center">
+            <p class="text-lg font-bold text-slate-900 dark:text-slate-100">
+              Eunice Ebert
+            </p>
+            <p class="mb-5 text-sm">Human Resources</p>
+            <div class="flex items-center space-x-3 sm:justify-center">
+              <a
+                class="transition-colors duration-300 hover:text-deep-purple-accent-400"
+                href="/"
+              >
+                <span class="w-fit">
+                  <svg
+                    class="h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-5"
+                  >
+                    <path
+                      d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+              <a
+                class="transition-colors duration-300 hover:text-deep-purple-accent-400"
+                href="/"
+              >
+                <span class="w-fit">
+                  <svg
+                    class="h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-5"
+                  >
+                    <path
+                      d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="relative pb-56 mb-4 rounded-global shadow lg:pb-64">
+            <img
+              class="absolute object-cover w-full h-full rounded-global bg-blue-100 object-center"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGZhY2VzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            />
+          </div>
+          <div class="flex flex-col sm:text-center">
+            <p class="text-lg font-bold text-slate-900 dark:text-slate-100">
+              John Doe
+            </p>
+            <p class="mb-5 text-sm">Software Engineer</p>
+            <div class="flex items-center space-x-3 sm:justify-center">
+              <a
+                class="transition-colors duration-300 hover:text-deep-purple-accent-400"
+                href="/"
+              >
+                <span class="w-fit">
+                  <svg
+                    class="h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-5"
+                  >
+                    <path
+                      d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+              <a
+                class="transition-colors duration-300 hover:text-deep-purple-accent-400"
+                href="/"
+              >
+                <span class="w-fit">
+                  <svg
+                    class="h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-5"
+                  >
+                    <path
+                      d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- form -->
+    <div class="py-9" id="contactus">
+      <section
+        class="w-full max-w-2xl px-6 py-4 mx-auto bg-white rounded-md dark:bg-transparent xl:rounded-global"
+      >
+        <h2 class="text-3xl font-bold text-center">Get in touch</h2>
+        <p class="mt-3 text-center text-lg">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        </p>
+        <div class="grid grid-cols-1 gap-6 mt-6 sm:grid-cols-2 md:grid-cols-3">
+          <a
+            class="flex flex-col items-center px-4 py-3 text-gray-700 transition-colors duration-200 transform rounded-md dark:text-gray-200 hover:bg-blue-200 dark:hover:bg-blue-500"
+            href="#"
+          >
+            <span class="w-fit">
+              <svg
+                class="w-5 h-5"
+                class="w-5 h-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span class="mt-2">
+              <p>121 Street, NY</p>
+            </span>
+          </a>
+          <a
+            class="flex flex-col items-center px-4 py-3 text-gray-700 transition-colors duration-200 transform rounded-md dark:text-gray-200 hover:bg-blue-200 dark:hover:bg-blue-500"
+            href="#"
+          >
+            <span class="w-fit">
+              <svg
+                class="w-5 h-5"
+                class="w-5 h-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                />
+              </svg>
+            </span>
+            <span class="mt-2">
+              <p>+2499999666600</p>
+            </span>
+          </a>
+          <a
+            class="flex flex-col items-center px-4 py-3 text-gray-700 transition-colors duration-200 transform rounded-md dark:text-gray-200 hover:bg-blue-200 dark:hover:bg-blue-500"
+            href="#"
+          >
+            <span class="w-fit">
+              <svg
+                class="w-5 h-5"
+                class="w-5 h-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                />
+                <path
+                  d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                />
+              </svg>
+            </span>
+            <span class="mt-2">
+              <p>example@example.com</p>
+            </span>
+          </a>
+        </div>
+        <div class="mt-6">
+          <div class="items-center -mx-2 md:flex">
+            <div class="w-full mx-2">
+              <label
+                class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+              >
+                <p>Name</p>
+              </label>
+              <input
+                class="block px-4 py-2 text-gray-700 bg-white border rounded-global w-full focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:focus:border-blue-300"
+              />
+            </div>
+            <div class="w-full mx-2 mt-4 box-border md:mt-0">
+              <label
+                class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+              >
+                <p>E-mail</p>
+              </label>
+              <input
+                class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-global focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:focus:border-blue-300"
+              />
+            </div>
+          </div>
+          <div class="w-full mt-4">
+            <label
+              class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+            >
+              <p>Message</p>
+            </label>
+            <textarea
+              class="block w-full h-40 px-4 py-2 text-gray-700 bg-white border rounded-global border-gray-200 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:focus:border-blue-300"
+            ></textarea>
+          </div>
+          <div class="flex justify-center mt-6">
+            <button
+              class="px-4 py-2 text-white transition-colors duration-200 transform rounded-global focus:outline-none focus:bg-gray-600 bg-primary"
+            >
+              <p>Send Message</p>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- call to action -->
+    <div class="py-6 sm:py-8 lg:py-12">
+      <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+        <div class="flex bg-gray-100 overflow-hidden rounded-global">
+          <div class="sm:w-1/3 lg:w-1/2 hidden sm:block bg-gray-200 relative">
+            <img
+              class="w-full h-full object-cover object-center absolute inset-0"
+              src="https://picsum.photos/502"
+            />
+          </div>
+          <div
+            class="w-full flex items-center p-4 dark:bg-slate-900 sm:w-2/3 sm:p-8 lg:w-1/2 lg:pl-10"
+          >
+            <div class="w-full flex sm:block flex-col items-center">
+              <div class="mb-4 sm:mb-8">
+                <h2
+                  class="text-xl font-bold text-center text-primary sm:text-2xl sm:text-left lg:text-3xl"
+                >
+                  Get the latest updates
+                </h2>
+                <p class="text-center sm:text-left">
+                  Sign up for our newsletter
+                </p>
+              </div>
+              <form class="w-full max-w-md flex gap-2 mb-3 sm:mb-5">
+                <input
+                  class="w-full flex-1 bg-gray-white placeholder-gray-400 border border-gray-300 focus:ring ring-indigo-300 outline-none transition duration-100 px-3 py-2 rounded-global dark:text-black"
+                />
+                <button
+                  class="inline-block hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-sm font-semibold text-center outline-none transition duration-100 px-8 py-2 text-white bg-primary rounded-global md:text-base"
+                >
+                  Send
+                </button>
+              </form>
+              <p class="text-xs text-center sm:text-left">
+                <span>By signing up to our newsletter you agree to our </span>
+                <a
+                  class="hover:text-indigo-500 active:text-indigo-600 underline transition duration-100"
+                  href="#"
+                >
+                  Term of Service
+                </a>
+                <span> and </span>
+                <a
+                  class="hover:text-indigo-500 active:text-indigo-600 underline transition duration-100"
+                  href="#"
+                >
+                  Privacy Policy
+                </a>
+                <span>.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- foooter -->
+    <footer class="py-12 leading-6 px-4 lg:px-8">
+      <div class="flex justify-between mx-auto mb-6 max-w-screen-xl lg:mb-8">
+        <a
+          class="px-2 space-x-2 flex items-center gap-x-1 text-2xl font-bold text-primary"
+          href="#"
+        >
+          Gyandhan
+          <span class="order-first">
+            <div style="font-size: inherit; color: inherit; padding: 2px">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z"
+                ></path>
+              </svg>
+            </div>
+          </span>
+        </a>
+        <a
+          class="flex items-center cursor-pointer hover:text-gray-200"
+          href="#"
+        >
+          <span>Return to top</span>
+          <span class="block w-4 h-4 align-middle ml-2">
+            <div style="font-size: inherit; color: inherit; padding: 2px">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"
+                ></path>
+              </svg>
+            </div>
+          </span>
+        </a>
+      </div>
+      <div
+        class="pt-8 mx-auto max-w-screen-xl border-t-2 border-solid box-border space-y-8 dark:border-slate-700"
+      >
+        <div class="md:grid md:grid-cols-5">
+          <div
+            class="py-1 dark:border-slate-700 md:border-r-2 md:pr-4 md:col-span-1"
+          >
+            <h5
+              class="m-0 text-lg font-semibold leading-none text-slate-900 dark:text-slate-100"
+            >
+              Policies
+            </h5>
+          </div>
+          <nav class="col-span-4 col-start-2 mt-2 md:pl-12 md:mt-0 lg:pl-24">
+            <ul
+              class="flex flex-col p-0 space-y-2 sm:flex-row sm:space-x-10 sm:space-y-0"
+            >
+              <li class="text-left">
+                <a
+                  class="text-base font-normal cursor-pointer hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li class="text-left">
+                <a
+                  class="text-base font-normal cursor-pointer hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  Terms and conditions
+                </a>
+              </li>
+              <li class="text-left">
+                <a
+                  class="text-base font-normal cursor-pointer hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  Refund policy
+                </a>
+              </li>
+              <li class="text-left">
+                <a
+                  class="text-base font-normal cursor-pointer hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  Return Policy
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="md:grid md:grid-cols-5">
+          <div
+            class="py-1 dark:border-slate-700 md:border-r-2 md:pr-4 md:col-span-1"
+          >
+            <h5
+              class="m-0 text-lg font-semibold leading-none text-slate-900 dark:text-slate-100"
+            >
+              Links
+            </h5>
+          </div>
+          <nav class="col-span-4 col-start-2 mt-2 md:pl-12 md:mt-0 lg:pl-24">
+            <ul
+              class="flex flex-col p-0 space-y-2 sm:flex-row sm:space-x-10 sm:space-y-0"
+            >
+              <li class="text-left">
+                <a
+                  class="text-base font-normal cursor-pointer hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  Care
+                </a>
+              </li>
+              <li class="text-left">
+                <a
+                  class="text-base font-normal cursor-pointer hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  About Us
+                </a>
+              </li>
+              <li class="text-left">
+                <a
+                  class="text-base font-normal cursor-pointer hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  Contact Us
+                </a>
+              </li>
+              <li class="text-left">
+                <a
+                  class="text-base font-normal cursor-pointer text-secondary hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  support@gyandhan.com
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="md:grid md:grid-cols-5">
+          <div
+            class="py-1 dark:border-slate-700 md:border-r-2 md:pr-4 md:col-span-1"
+          >
+            <h5
+              class="m-0 text-lg font-semibold leading-none text-slate-900 dark:text-slate-100"
+            >
+              Social Media
+            </h5>
+          </div>
+          <nav class="col-span-4 col-start-2 mt-2 md:pl-12 md:mt-0 lg:pl-24">
+            <ul
+              class="flex flex-col p-0 space-y-2 sm:flex-row sm:space-x-10 sm:space-y-0"
+            >
+              <li class="text-left">
+                <a
+                  class="flex text-base font-normal cursor-pointer items-center gap-x-2 hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  Twitter
+                  <span>
+                    <div
+                      style="font-size: inherit; color: inherit; padding: 2px"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 448 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </span>
+                </a>
+              </li>
+              <li class="text-left">
+                <a
+                  class="flex text-base font-normal cursor-pointer items-center gap-x-2 hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  Google
+                  <span>
+                    <div
+                      style="font-size: inherit; color: inherit; padding: 2px"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 640 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </span>
+                </a>
+              </li>
+              <li class="text-left">
+                <a
+                  class="flex text-base font-normal cursor-pointer items-center gap-x-2 hover:text-gray-800 dark:hover:text-gray-100"
+                  href="#"
+                >
+                  Instagram
+                  <span>
+                    <div
+                      style="font-size: inherit; color: inherit; padding: 2px"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 448 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div
+        class="pt-8 mx-auto mt-8 max-w-screen-xl border-t-2 border-solid box-border dark:border-slate-700 lg:mt-12"
+      >
+        <p class="m-0 text-sm leading-5 text-center md:text-left">
+          ©2023 gyandhan.com. All rights reserved
+        </p>
+      </div>
+    </footer>
+
+    <!-- nav icon -->
+    <div
+      x-data="{open: false}"
+      class="fixed"
+      style="top: 16px; position: fixed; right: 15px"
+    >
+      <div
+        class="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium dark:text-white hover:bg-opacity-30"
+        x-on:click="open = !open"
+      >
+        <span class="w-fit">
+          <svg
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </div>
+      <ul
+        class="absolute right-0 text-gray-900 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg z-20"
+        x-show="open"
+      >
+        <li
+          x-on:click="open = false"
+          class="group flex rounded-md items-center w-full px-2 py-2 text-sm cursor-pointer"
+        >
+          <a href="#home">Home</a>
+        </li>
+        <li
+          x-on:click="open = false"
+          class="group flex rounded-md items-center w-full px-2 py-2 text-sm cursor-pointer"
+        >
+          <a href="#loans">Loans</a>
+        </li>
+
+        <li
+          x-on:click="open = false"
+          class="group flex rounded-md items-center w-full px-2 py-2 text-sm cursor-pointer"
+        >
+          <a href="#calcemi">Calculate Emi</a>
+        </li>
+        <li
+          x-on:click="open = false"
+          class="group flex rounded-md items-center w-full px-2 py-2 text-sm cursor-pointer"
+        >
+          <a href="#contactus">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <script>
+      function calculateEMI() {
+        // Get the input values
+        let loanAmount = parseFloat(
+          document.getElementById("loanAmount").value
+        );
+        let annualInterestRate = parseFloat(
+          document.getElementById("annualInterestRate").value
+        );
+        let tenure = parseFloat(document.getElementById("tenure").value);
+
+        // Convert the annual interest rate to monthly interest rate
+        let monthlyInterestRate = annualInterestRate / 1200;
+
+        // Calculate the EMI
+        let numerator =
+          loanAmount *
+          monthlyInterestRate *
+          Math.pow(1 + monthlyInterestRate, tenure);
+        let denominator = Math.pow(1 + monthlyInterestRate, tenure) - 1;
+        let emi = numerator / denominator;
+
+        // Calculate the total interest to be paid
+        let totalInterest = emi * tenure - loanAmount;
+
+        // Calculate the total payment (principal + interest)
+        let totalPayment = emi * tenure;
+
+        // Display the output
+        let outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+				<p style="font-size: 16px;">EMI per month: ${emi.toFixed(2)}</p>
+				<p style="font-size: 16px;">Total interest to be paid: ${totalInterest.toFixed(
+          2
+        )}</p>
+				<p style="font-size: 16px;">Total payment (principal + interest): ${totalPayment.toFixed(
+          2
+        )}</p>`;
+      }
+    </script>
+  </body>
 </html>
